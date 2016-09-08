@@ -1,0 +1,2 @@
+defmodule Chalice do
+end
