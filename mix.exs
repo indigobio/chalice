@@ -4,7 +4,7 @@ defmodule Chalice.Mixfile do
   def project do
     [app: :chalice,
      version: "0.1.0",
-     elixir: "~> 1.2",
+     elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps,
@@ -33,11 +33,13 @@ defmodule Chalice.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:ecto, "~> 2.0"},
+     {:poison, "~> 2.0"},
+     {:timex, "~> 3.0"},
 
      # dev only
      {:credo, "~> 0.4", only: [:dev, :test]},
      {:dogma, "~> 0.1", only: :dev},
-     {:dialyxir, "~> 0.3.5", only: [:dev]}]
+     {:dialyxir, "~> 0.3.5", only: :dev}]
   end
 
   defp package do
