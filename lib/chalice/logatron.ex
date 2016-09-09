@@ -1,6 +1,21 @@
 defmodule Chalice.Logatron do
   @moduledoc """
-  Writes log messages in logatron's format
+  Writes log messages in logatron's format.
+
+  Configure:
+
+    config :logger, :console,
+      app_id: :app_name_here,
+      format: {Chalice.Logatron, :format_json},
+      metadata: [:request_id, :site, ...]
+
+  To make the site available, in phoenix applications:
+
+    plug Chalice.Logatron.Site, "site_param_name_here"
+
+  In other applications:
+
+    Logger.metadata(site: "site_name")
   """
   alias Logger, as: L
   alias Logger.Formatter, as: LF
