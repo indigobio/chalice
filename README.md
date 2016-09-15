@@ -1,6 +1,6 @@
 # Chalice
 
-**TODO: Add description**
+Code shared across elixir services.
 
 ## Installation
 
