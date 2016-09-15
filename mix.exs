@@ -1,9 +1,11 @@
 defmodule Chalice.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [app: :chalice,
-     version: "0.1.0",
+     version: @version,
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -39,7 +41,11 @@ defmodule Chalice.Mixfile do
      # dev only
      {:credo, "~> 0.4", only: [:dev, :test]},
      {:dogma, "~> 0.1", only: :dev},
-     {:dialyxir, "~> 0.3.5", only: :dev}]
+     {:dialyxir, "~> 0.3.5", only: :dev},
+
+     # test only
+     {:junit_formatter, "~> 1.1.0", only: [:dev, :test]}
+    ]
   end
 
   defp package do
