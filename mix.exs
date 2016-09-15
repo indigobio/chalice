@@ -41,7 +41,11 @@ defmodule Chalice.Mixfile do
      # dev only
      {:credo, "~> 0.4", only: [:dev, :test]},
      {:dogma, "~> 0.1", only: :dev},
-     {:dialyxir, "~> 0.3.5", only: :dev}]
+     {:dialyxir, "~> 0.3.5", only: :dev},
+
+     # test only
+     {:junit_formatter, "~> 1.1.0", only: [:dev, :test]}
+    ]
   end
 
   defp package do
