@@ -21,7 +21,8 @@ defmodule Chalice.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger],
+     included_applications: [:ecto, :poison, :timex]]
   end
 
   # Dependencies can be Hex packages:
