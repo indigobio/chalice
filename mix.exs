@@ -1,7 +1,7 @@
 defmodule Chalice.Mixfile do
   use Mix.Project
 
-  @version "0.1.2"
+  @version "0.1.3"
 
   def project do
     [app: :chalice,
@@ -21,7 +21,8 @@ defmodule Chalice.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger],
+     included_applications: [:ecto, :poison, :timex]]
   end
 
   # Dependencies can be Hex packages:
